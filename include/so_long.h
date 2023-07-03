@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/02 21:53:04 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/03 17:36:47 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../lib/libft/libft.h"
 # include "../lib/mlx/mlx.h"
+# include "../lib/mlx/mlx_int.h"
 
 # define SIZE		32
 // # define SPRITES	5
@@ -27,14 +28,15 @@
 
 typedef unsigned int	t_uint;
 
-// typedef enum e_tile
-// {
-// 	SPACE	= '0',
-// 	WALL	= '1',
-// 	COIN	= 'C',
-// 	EXIT	= 'E',
-// 	PLAYER	= 'P',
-// }			t_tile;
+typedef enum e_tile
+{
+	SPACE = '0',
+	WALL = '1',
+	COIN = 'C',
+	EXIT = 'E',
+	PLAYER = 'P'
+} t_tile;
+
 
 // typedef enum e_index
 // {
