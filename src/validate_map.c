@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:59:44 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/03 18:42:32 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/03 21:31:36 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,4 @@ int validate_walls(t_map *map)
 	return (1);
 }
 
+int validate_tiles()
