@@ -6,7 +6,7 @@
 /*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/06 18:12:07 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:24:11 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,12 @@ typedef struct s_game
 	t_uint		moves;
 }					t_game;
 
+void check_file(char *file);
+int exit_error(t_game *so_long, char *message);
+int flood_fill(t_map *map, t_game *so_long, char **path);
+
 void read_map(t_game *so_long, char *file);
 void	validate_map(t_game *so_long);
-int quit_game (t_game *so_long);
+int quit_game(t_game *so_long);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:21:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/06 17:10:00 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:23:09 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,15 @@ int flood_fill (t_map *map, t_game *so_long, char **path)
 	return (coins = map->coins && exit == 1);
 }
 
+void check_file (char *file)
+{
+	size_t i;
+	
+	i = ft_strlen(file);
+	if(i<= 4)
+	{
+		exit_error(NULL, "Invalid file name!");
+	}
+	else if (!ft_strnstr((file + i - 4), ".ber", 4))
+		exit_error(NULL, "Invalid file extension!");
+}
