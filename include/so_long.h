@@ -6,7 +6,7 @@
 /*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/03 17:36:47 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:12:07 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,27 +114,8 @@ typedef struct s_game
 	t_uint		moves;
 }					t_game;
 
-// t_tile	get_tile(t_game *so_long, t_point p);
-// int		flood_fill(t_map *map, t_point curr, char **path);
-// int		exit_error(t_game *so_long, char *msg);
-// void	check_filename(char *file);
-// int		is_same_point(t_point a, t_point b);
-
-// void	clean_tiles(char **tiles);
-// void	clean_game(t_game *so_long);
-// int		quit_game(t_game *so_long);
-
-// void	check_map(t_game *so_long);
-// void	read_map(t_game *so_long, char *file);
-
-// void	launch_mlx(t_game *so_long, t_map *map);
-// void	load_assets(t_game *so_long);
-// int		render_move(t_game *so_long);
-// void	render_tile(t_game *so_long, t_point p);
-// void	render_map(t_game *so_long, t_map *map);
-
-// void	move_player(t_game *sl, t_map *map);
-// int		check_move(t_game *so_long);
-// int		check_keypress(int key, t_game *so_long);
+void read_map(t_game *so_long, char *file);
+void	validate_map(t_game *so_long);
+int quit_game (t_game *so_long);
 
 #endif

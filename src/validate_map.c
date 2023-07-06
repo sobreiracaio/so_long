@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:59:44 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/05 21:35:15 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/06 17:47:26 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,19 @@ int validate_paths(t_map *map, t_game *so_long)
 			}
 		}
 	}
-	found_exit = flood_fill(map, so_long->curr, tiles);
-	return (found_exit);
+	found_exit = flood_fill(map, so_flood_fill(map. (t_point){curr.x +1, curr.y}, path));
+}
+
+void validate_map(t_game *so_long)
+{
+	if (!so_long->map->rows)
+		exit_error(so_long, "Empty map!");
+	if (!validate_format(so_long->map))
+		exit_error(so_long, "Map is not rectangular!");
+	if (!validate_walls(so_long->map))
+		exit_error(so_long, "Map is not surrounded by walls!")
+	if (validate_tiles(so_long->map, so_long))
+		exit_error(so_long, "Invalid tiles on map!")
+	if (!check_paths(so_long->map, so_long))
+		exit_error(so_long, "Map doesn't have a valid path!")
 }
