@@ -6,7 +6,7 @@
 /*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/06 18:24:11 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:52:00 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 # include "../lib/mlx/mlx_int.h"
 
 # define SIZE		32
-// # define SPRITES	5
-// # define TILES		"01CEP"
-// # define FW1		"assets/img/1.xpm"
-// # define FS1		"assets/img/0.xpm"
-// # define FC1		"assets/img/c.xpm"
-// # define FE1		"assets/img/e.xpm"
-// # define FP1		"assets/img/p.xpm"
+ # define SPRITES	5
+# define TILES		"01CEP"
+# define FW1		"assets/img/1.xpm"
+# define FS1		"assets/img/0.xpm"
+# define FC1		"assets/img/c.xpm"
+# define FE1		"assets/img/e.xpm"
+# define FP1		"assets/img/p.xpm"
 
 typedef unsigned int	t_uint;
 
@@ -38,14 +38,14 @@ typedef enum e_tile
 } t_tile;
 
 
-// typedef enum e_index
-// {
-// 	W1,
-// 	S1,
-// 	C1,
-// 	E1,
-// 	P1,
-// }		t_id;
+typedef enum e_index
+{
+	W1,
+	S1,
+	C1,
+	E1,
+	P1,
+}		t_id;
 
 // typedef enum e_key
 // {
