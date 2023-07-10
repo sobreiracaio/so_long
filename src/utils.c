@@ -6,7 +6,7 @@
 /*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:21:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/06 18:23:09 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/10 17:30:40 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,14 @@ void check_file (char *file)
 	}
 	else if (!ft_strnstr((file + i - 4), ".ber", 4))
 		exit_error(NULL, "Invalid file extension!");
+}
+
+int is_same_point(t_point a, t_point b)
+{
+	return (a.x == b.x && a.y == b.y);
+}
+
+t_tile get_tile(t_game *so_long, t_point p)
+{
+	return (so_long->map->tiles[p.y][p.x]);
 }
