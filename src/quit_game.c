@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:54:12 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/06 17:44:01 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/10 22:22:28 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void clean_map(t_map *map)
     free(map);
 }
 
-void game_wipe(t_game *so_long)
+void clean_game(t_game *so_long)
 {
     if(!so_long)
         return;
@@ -43,6 +43,6 @@ void game_wipe(t_game *so_long)
 
 int quit_game (t_game *so_long)
 {
-    game_wipe(so_long);
+    clean_game(so_long);
     exit(EXIT_SUCCESS);    
 }
