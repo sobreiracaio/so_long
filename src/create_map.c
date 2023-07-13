@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 19:37:12 by admin             #+#    #+#             */
-/*   Updated: 2023/07/12 20:54:06 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 20:16:22 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_map *create_map (t_uint cols, t_uint rows)
     return (map);
 }
 
-int get_rows(char *file)
+int get_rows(t_game *so_long, char *file)
 {
     int fd;
     int rows;
@@ -39,7 +39,7 @@ int get_rows(char *file)
     rows = 0;
     fd = open(file, O_RDONLY);
     if (fd < 0)
-        exit(1);
+        exit_error(so_long, "Could not open file!");
     while (1)
     {
         line = get_next_line(fd);
@@ -60,7 +60,7 @@ void read_map(t_game *so_long, char *file)
     t_uint i;
 
     i = -1;
-    so_long->map = create_map(0, get_rows(file));
+    so_long->map = create_map(0, get_rows(so_long, file));
     if (!so_long->map)
         exit(1);
     fd = open(file, O_RDONLY);

@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:59:44 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/13 00:50:29 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 21:13:15 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int validate_paths(t_map *map, t_game *so_long)
 
 	tiles = ft_calloc (map->rows +1, sizeof(char *));
 	if(!tiles)
-		exit(1);
+		exit_error(so_long, "Failed to allocate memory!");
 	while(++i < map->rows)
 	{
 		tiles[i] = ft_strdup(map->tiles[i]);
@@ -90,7 +90,7 @@ int validate_paths(t_map *map, t_game *so_long)
 			if(!tiles[i])
 			{
 				clean_tiles(tiles);
-				exit(1);
+				exit_error(so_long, "Failed to allocate memory!");
 			}
 		}
 	}
@@ -107,7 +107,7 @@ void validate_map(t_game *so_long)
 		exit_error(so_long, "Map is not rectangular!");
 	if (!validate_walls(so_long->map))
 		exit_error(so_long, "Map is not surrounded by walls!");
-	if (validate_tiles(so_long->map, so_long))
+	if (!validate_tiles(so_long->map, so_long))
 		exit_error(so_long, "Invalid tiles on map!");
 	if (!validate_paths(so_long->map, so_long))
 		exit_error(so_long, "Map doesn't have a valid path!");

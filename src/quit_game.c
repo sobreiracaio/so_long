@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:54:12 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/10 22:22:28 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 20:50:59 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void clean_map(t_map *map)
 {
     if(!map)
         return;
-    clean_tiles(map->tiles)
+    clean_tiles(map->tiles);
     free(map);
 }
 

@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:22:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/10 22:20:33 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 20:45:21 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int check_move (t_game *so_long)
 {
-	return((!is_same_point(so_long->curr, so_long->next) && get_tile(s_long, so_long->next)) != WALL); 	
+	return(!is_same_point(so_long->curr, so_long->next) && get_tile(so_long, so_long->next) != WALL); 	
 }
 
 void move_player(t_game *s1, t_map *map)
@@ -28,9 +28,9 @@ void move_player(t_game *s1, t_map *map)
 	else
 		previous = SPACE;
 	map->tiles[s1->next.y][s1->next.x] = PLAYER;
-	render_tile(sl, (t_point){sl->curr.x, sl->curr.y});
-	render_tile(sl, (t_point){sl->next.x, sl->next.y});
-	sl->curr = sl->next;
+	render_tile(s1, (t_point){s1->curr.x, s1->curr.y});
+	render_tile(s1, (t_point){s1->next.x, s1->next.y});
+	s1->curr = s1->next;
 	
 }
 

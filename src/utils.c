@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:21:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/12 21:17:55 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 21:16:27 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	flood_fill(t_map *map, t_point curr, char **path)
 	flood_fill(map,(t_point){curr.x - 1, curr.y}, path);
 	flood_fill(map,(t_point){curr.x, curr.y + 1}, path);
 	flood_fill(map,(t_point){curr.x, curr.y - 1}, path);
-	return (coins = map->coins && exit == 1);
+	return (coins == map->coins && exit == 1);
 }
 
 void check_file (char *file)

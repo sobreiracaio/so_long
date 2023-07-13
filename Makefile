@@ -6,14 +6,14 @@
 #    By: admin <admin@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 08:04:49 by wcorrea-          #+#    #+#              #
-#    Updated: 2023/07/12 21:14:14 by admin            ###   ########.fr        #
+#    Updated: 2023/07/13 20:50:22 by admin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 OUT = so_long
 
 SRC = src/run_game.c src/utils.c src/create_map.c src/validate_map.c  \
-		 src/graphs.c src/moves.c src/clean_exit.c
+		 src/graphs.c src/moves.c src/quit_game.c
 
 OBJS = ${SRC:.c=.o}
 

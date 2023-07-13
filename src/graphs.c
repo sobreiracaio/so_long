@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/13 01:30:36 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 20:31:13 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void launch_mlx (t_game *so_long, t_map *map)
 {
-	so_long->display.mlx = mlx.init();
+	so_long->display.mlx = mlx_init();
 
 	if(!so_long->display.mlx)
 		exit_error(so_long, "Mlx start failed!");
@@ -27,7 +27,7 @@ void load_assets(t_game *so_long)
 {
 	so_long->sp = malloc (SPRITES * sizeof(t_sprite));
 	if(!so_long->sp)
-		exit_error(so_long, "Failed to allocate sprites on memory!")
+		exit_error(so_long, "Failed to allocate sprites on memory!");
 	so_long->sp[W1].img = mlx_xpm_file_to_image(so_long->display.mlx, FW1, &(so_long->sp[W1].width), &(so_long->sp[W1].height));
 	so_long->sp[S1].img = mlx_xpm_file_to_image(so_long->display.mlx, FS1, &(so_long->sp[W1].width), &(so_long->sp[S1].height));
 	so_long->sp[C1].img = mlx_xpm_file_to_image(so_long->display.mlx, FC1, &(so_long->sp[W1].width), &(so_long->sp[C1].height));
@@ -44,7 +44,7 @@ int render_move(t_game *so_long)
 		so_long->coins++;
 	else if(get_tile(so_long, so_long->next) == EXIT && so_long->coins == so_long->map->coins)
 		quit_game(so_long);
-	move_player(so_long, so_long->map):
+	move_player(so_long, so_long->map);
 	return (0);
 	
 }
