@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/10 22:24:09 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/12 21:18:10 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,30 @@ typedef enum e_index
 	P1,
 }		t_id;
 
-// typedef enum e_key
-// {
-// 	ESC		= 65307,
-// 	W		= 119,
-// 	A		= 97,
-// 	S		= 115,
-// 	D		= 100,
-// 	UP		= 65362,
-// 	DOWN	= 65364,
-// 	LEFT	= 65361,
-// 	RIGHT	= 65363,
-// }			t_key;
+typedef enum e_key
+{
+	ESC		= 65307,
+	W		= 119,
+	A		= 97,
+	S		= 115,
+	D		= 100,
+	UP		= 65362,
+	DOWN	= 65364,
+	LEFT	= 65361,
+	RIGHT	= 65363,
+}			t_key;
 
-// typedef enum e_event
-// {
-// 	ON_KEYPRESS	= 2,
-// 	ON_CLOSE	= 17,
-// }				t_event;
+typedef enum e_event
+{
+	ON_KEYPRESS	= 2,
+	ON_CLOSE	= 17,
+}				t_event;
 
-// typedef enum e_mask
-// {
-// 	KEYPRESS_MASK	= (1L << 0),
-// 	CLOSE_MASK		= (1L << 17)
-// }					t_mask;
+typedef enum e_mask
+{
+	KEYPRESS_MASK	= (1L << 0),
+	CLOSE_MASK		= (1L << 17)
+}					t_mask;
 
 typedef struct s_point
 {
@@ -115,7 +115,7 @@ typedef struct s_game
 }					t_game;
 
 t_tile	get_tile(t_game *so_long, t_point p);
-int		flood_fill(t_map *map, t_point curr, char **path);
+int	flood_fill(t_map *map, t_point curr, char **path);
 int		exit_error(t_game *so_long, char *msg);
 void	check_file(char *file);
 int		is_same_point(t_point a, t_point b);

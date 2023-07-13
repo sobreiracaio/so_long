@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:59:44 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/06 17:47:26 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/07/13 00:50:29 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int validate_format (t_map *map)
 	row_len = ft_strlen(map->tiles[0]);
 	while (i < map->rows)
 	{
-		if(ft_strlen(map->tiles[i++] != row_len))
+		if(ft_strlen(map->tiles[i++]) != row_len)
 			return (0);
 	}
 	map->cols = row_len;
@@ -34,11 +34,11 @@ int validate_walls(t_map *map)
 
 	i = -1;
 	while(++i < map->rows) 
-		if(map->tiles[i][0] != WALL || map->tiles[i][map-cols -1] != WALL )
+		if(map->tiles[i][0] != WALL || map->tiles[i][map->cols -1] != WALL )
 			return (0);
 	i = -1;
 	while (++i < map-> cols)
-		if (map->tile[0][i] != WALL || map->tiles[map->rows-1][i] != WALL)
+		if (map->tiles[0][i] != WALL || map->tiles[map->rows-1][i] != WALL)
 			return (0);
 	return (1);
 }
@@ -47,7 +47,7 @@ int validate_tiles(t_map *map, t_game *so_long)
 {
 	t_uint i;
 	t_uint j;
-
+	
 	i = -1;
 	while (++i< map->rows)
 	{
@@ -68,7 +68,7 @@ int validate_tiles(t_map *map, t_game *so_long)
 				return (0);
 		}
 	}
-	return (players == 1 && exits == 1 && coins => 1);
+	return (map->players == 1 && map->exits == 1 && map->coins >= 1);
 }
 
 int validate_paths(t_map *map, t_game *so_long)
@@ -94,7 +94,9 @@ int validate_paths(t_map *map, t_game *so_long)
 			}
 		}
 	}
-	found_exit = flood_fill(map, so_flood_fill(map. (t_point){curr.x +1, curr.y}, path));
+	found_exit = flood_fill(map, (t_point){so_long->curr.x +1, so_long->curr.y}, tiles);
+	clean_tiles(tiles);
+	return (found_exit);
 }
 
 void validate_map(t_game *so_long)
@@ -104,9 +106,9 @@ void validate_map(t_game *so_long)
 	if (!validate_format(so_long->map))
 		exit_error(so_long, "Map is not rectangular!");
 	if (!validate_walls(so_long->map))
-		exit_error(so_long, "Map is not surrounded by walls!")
+		exit_error(so_long, "Map is not surrounded by walls!");
 	if (validate_tiles(so_long->map, so_long))
-		exit_error(so_long, "Invalid tiles on map!")
-	if (!check_paths(so_long->map, so_long))
-		exit_error(so_long, "Map doesn't have a valid path!")
+		exit_error(so_long, "Invalid tiles on map!");
+	if (!validate_paths(so_long->map, so_long))
+		exit_error(so_long, "Map doesn't have a valid path!");
 }

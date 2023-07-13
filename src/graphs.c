@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/10 21:42:09 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/13 01:30:36 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void launch_mlx (t_game *so_long, t_map *map)
 	so_long->display.mlx = mlx.init();
 
 	if(!so_long->display.mlx)
-		exit_error(So_long, "Mlx start failed!")
+		exit_error(so_long, "Mlx start failed!");
 	so_long->display.win = mlx_new_window(so_long->display.mlx, map->cols * SIZE, map->rows * SIZE, "so_long");
 	if(!so_long->display.win)
-		exit_error(so_long, "Error creating window!")
+		exit_error(so_long, "Error creating window!");
 }
 
 void load_assets(t_game *so_long)

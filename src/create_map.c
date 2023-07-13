@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 19:37:12 by admin             #+#    #+#             */
-/*   Updated: 2023/07/02 22:27:18 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/12 20:54:06 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,18 @@ void read_map(t_game *so_long, char *file)
     close (fd);
 }
 
-int main (void)
-{
-    //t_uint i;
-    t_game *game;
-    game = ft_calloc(1, sizeof(t_game));
-    read_map(game, "map.ber");
-    printf("%i\n", game->map->cols);
+// int main (void)
+// {
+//     //t_uint i;
+//     t_game *game;
+//     game = ft_calloc(1, sizeof(t_game));
+//     read_map(game, "map.ber");
+//     printf("%i\n", game->map->cols);
     
     // while (i < 6)
     // {
     // printf("%s\n", game->map->tiles[i] );
     // i++;
     // }
-}
+// }
 
