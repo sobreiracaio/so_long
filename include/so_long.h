@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/12 21:18:10 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/15 18:27:30 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "../lib/mlx/mlx_int.h"
 
 # define SIZE		32
- # define SPRITES	5
+# define SPRITES	5
 # define TILES		"01CEP"
 # define FW1		"assets/img/1.xpm"
 # define FS1		"assets/img/0.xpm"

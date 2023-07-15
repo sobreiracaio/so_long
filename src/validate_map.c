@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:59:44 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/13 21:13:15 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/14 18:56:00 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int validate_paths(t_map *map, t_game *so_long)
 			}
 		}
 	}
-	found_exit = flood_fill(map, (t_point){so_long->curr.x +1, so_long->curr.y}, tiles);
+	found_exit = flood_fill(map, so_long->curr, tiles);
 	clean_tiles(tiles);
 	return (found_exit);
 }

@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/13 20:31:13 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/15 18:59:08 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void render_tile(t_game *so_long, t_point p)
 		sp = so_long->sp[S1];
 	else if (so_long->map->tiles[p.y][p.x] == PLAYER)
 		sp = so_long->sp[P1];
+	ft_printf("Good\n");
 	mlx_put_image_to_window(so_long->display.mlx, so_long->display.win, sp.img, sp.width * p.x, sp.height * p.y);
 }
 

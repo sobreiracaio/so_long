@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:21:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/13 21:16:27 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/14 20:04:28 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int exit_error (t_game *so_long, char *message)
 
 int	flood_fill(t_map *map, t_point curr, char **path)
 {
-     static t_uint coins;
-	 static int exit;
+     static t_uint coins = 0;
+	 static int exit = 0;
 
-	 coins = 0;
-	 exit = 0;
+	 
+	
 	 
 	if (path[curr.y][curr.x] == WALL)
 		return (0);
