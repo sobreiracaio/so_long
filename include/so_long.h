@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/07/15 18:27:30 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/16 17:44:21 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # define SIZE		32
 # define SPRITES	5
 # define TILES		"01CEP"
-# define FW1		"assets/img/1.xpm"
-# define FS1		"assets/img/0.xpm"
-# define FC1		"assets/img/c.xpm"
-# define FE1		"assets/img/e.xpm"
-# define FP1		"assets/img/p.xpm"
+# define FW1		"assets/images/1.xpm"
+# define FS1		"assets/images/0.xpm"
+# define FC1		"assets/images/c.xpm"
+# define FE1		"assets/images/e.xpm"
+# define FP1		"assets/images/p.xpm"
 
 typedef unsigned int	t_uint;
 

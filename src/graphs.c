@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/15 18:59:08 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/16 17:52:33 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void launch_mlx (t_game *so_long, t_map *map)
 	so_long->display.win = mlx_new_window(so_long->display.mlx, map->cols * SIZE, map->rows * SIZE, "so_long");
 	if(!so_long->display.win)
 		exit_error(so_long, "Error creating window!");
+	
 }
 
 void load_assets(t_game *so_long)
@@ -29,10 +30,11 @@ void load_assets(t_game *so_long)
 	if(!so_long->sp)
 		exit_error(so_long, "Failed to allocate sprites on memory!");
 	so_long->sp[W1].img = mlx_xpm_file_to_image(so_long->display.mlx, FW1, &(so_long->sp[W1].width), &(so_long->sp[W1].height));
-	so_long->sp[S1].img = mlx_xpm_file_to_image(so_long->display.mlx, FS1, &(so_long->sp[W1].width), &(so_long->sp[S1].height));
-	so_long->sp[C1].img = mlx_xpm_file_to_image(so_long->display.mlx, FC1, &(so_long->sp[W1].width), &(so_long->sp[C1].height));
-	so_long->sp[E1].img = mlx_xpm_file_to_image(so_long->display.mlx, FE1, &(so_long->sp[W1].width), &(so_long->sp[E1].height));
-	so_long->sp[P1].img = mlx_xpm_file_to_image(so_long->display.mlx, FP1, &(so_long->sp[W1].width), &(so_long->sp[P1].height));
+	so_long->sp[S1].img = mlx_xpm_file_to_image(so_long->display.mlx, FS1, &(so_long->sp[S1].width), &(so_long->sp[S1].height));
+	so_long->sp[C1].img = mlx_xpm_file_to_image(so_long->display.mlx, FC1, &(so_long->sp[C1].width), &(so_long->sp[C1].height));
+	so_long->sp[E1].img = mlx_xpm_file_to_image(so_long->display.mlx, FE1, &(so_long->sp[E1].width), &(so_long->sp[E1].height));
+	so_long->sp[P1].img = mlx_xpm_file_to_image(so_long->display.mlx, FP1, &(so_long->sp[P1].width), &(so_long->sp[P1].height));
+	//ft_printf("Value of width is: %d\n",so_long->sp[P1].width);
 }
 
 int render_move(t_game *so_long)
@@ -49,9 +51,9 @@ int render_move(t_game *so_long)
 	
 }
 
-void render_tile(t_game *so_long, t_point p)
+void	render_tile(t_game *so_long, t_point p)
 {
-	t_sprite sp;
+	t_sprite	sp;
 
 	if (so_long->map->tiles[p.y][p.x] == WALL)
 		sp = so_long->sp[W1];
@@ -63,14 +65,33 @@ void render_tile(t_game *so_long, t_point p)
 		sp = so_long->sp[S1];
 	else if (so_long->map->tiles[p.y][p.x] == PLAYER)
 		sp = so_long->sp[P1];
-	ft_printf("Good\n");
-	mlx_put_image_to_window(so_long->display.mlx, so_long->display.win, sp.img, sp.width * p.x, sp.height * p.y);
+		
+	
+	
+	// int i;
+		
+	// i =0;
+	// while(so_long->map->tiles[i])
+	// {
+	// 	ft_printf("%s\n",so_long->map->tiles[i]);
+	// 	i++;
+	// }
+
+	// ft_printf("Value of display.mlx is: %p\n", so_long->display.mlx);
+	// ft_printf("Value of display.win is: %p\n", so_long->display.win);
+	// ft_printf("Value of sp.img is: %p\n", sp.img);
+	// ft_printf("Value of sp.width is: %d\n", sp.width);
+	// ft_printf("Value of sp.height is: %d\n", sp.height);
+	
+	mlx_put_image_to_window(so_long->display.mlx, so_long->display.win, \
+		sp.img, sp.width * p.x, sp.height * p.y);
+	// ft_printf("Done!");
 }
 
-void render_map(t_game *so_long, t_map *map)
+void	render_map(t_game *so_long, t_map *map)
 {
-	t_uint x;
-	t_uint y;
+	t_uint	x;
+	t_uint	y;
 
 	y = -1;
 	while (++y < map->rows)
