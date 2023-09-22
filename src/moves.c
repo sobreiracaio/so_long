@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:22:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/13 20:45:21 by admin            ###   ########.fr       */
+/*   Updated: 2023/09/22 17:42:01 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int check_move (t_game *so_long)
 {
-	return(!is_same_point(so_long->curr, so_long->next) && get_tile(so_long, so_long->next) != WALL); 	
+	return(!is_same_point(so_long->curr, so_long->next) \
+			&& get_tile(so_long, so_long->next) != WALL); 	
 }
 
 void move_player(t_game *s1, t_map *map)
-{
+{	
 	static t_tile previous;
 	previous = SPACE;
 	
@@ -31,7 +32,6 @@ void move_player(t_game *s1, t_map *map)
 	render_tile(s1, (t_point){s1->curr.x, s1->curr.y});
 	render_tile(s1, (t_point){s1->next.x, s1->next.y});
 	s1->curr = s1->next;
-	
 }
 
 int check_key(int key, t_game *so_long)

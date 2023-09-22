@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 19:37:12 by admin             #+#    #+#             */
-/*   Updated: 2023/07/18 19:23:57 by admin            ###   ########.fr       */
+/*   Updated: 2023/09/22 16:32:31 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void read_map(t_game *so_long, char *file)
 {
     int fd;
     char *line;
-    int i;
+    t_uint i;
 
     i = -1;
     so_long->map = create_map(0, get_rows(so_long, file));
@@ -78,19 +78,3 @@ void read_map(t_game *so_long, char *file)
     } 
     close (fd);
 }
-
-// int main (void)
-// {
-//     //t_uint i;
-//     t_game *game;
-//     game = ft_calloc(1, sizeof(t_game));
-//     read_map(game, "map.ber");
-//     printf("%i\n", game->map->cols);
-    
-    // while (i < 6)
-    // {
-    // printf("%s\n", game->map->tiles[i] );
-    // i++;
-    // }
-// }
-
