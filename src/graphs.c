@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/16 17:52:33 by admin            ###   ########.fr       */
+/*   Updated: 2023/09/22 00:52:53 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void load_assets(t_game *so_long)
 	so_long->sp[C1].img = mlx_xpm_file_to_image(so_long->display.mlx, FC1, &(so_long->sp[C1].width), &(so_long->sp[C1].height));
 	so_long->sp[E1].img = mlx_xpm_file_to_image(so_long->display.mlx, FE1, &(so_long->sp[E1].width), &(so_long->sp[E1].height));
 	so_long->sp[P1].img = mlx_xpm_file_to_image(so_long->display.mlx, FP1, &(so_long->sp[P1].width), &(so_long->sp[P1].height));
-	//ft_printf("Value of width is: %d\n",so_long->sp[P1].width);
+	
 }
 
 int render_move(t_game *so_long)

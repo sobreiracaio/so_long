@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 19:37:12 by admin             #+#    #+#             */
-/*   Updated: 2023/07/13 20:16:22 by admin            ###   ########.fr       */
+/*   Updated: 2023/07/18 19:23:57 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void read_map(t_game *so_long, char *file)
 {
     int fd;
     char *line;
-    t_uint i;
+    int i;
 
     i = -1;
     so_long->map = create_map(0, get_rows(so_long, file));
