@@ -6,7 +6,7 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/09/24 19:28:05 by admin            ###   ########.fr       */
+/*   Updated: 2023/09/24 19:30:01 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int render_move(t_game *so_long)
 {
 	if(!check_move(so_long))
 		return (0);
-	//put terminal outputs for the moves
+	ft_putstr_fd("Moves: ", 1);
+	ft_putnbr_fd(++so_long->moves, 1);
+	ft_putstr_fd("\n", 1);
 	if(get_tile(so_long, so_long->next) == COIN)
 		so_long->coins++;
 	else if(get_tile(so_long, so_long->next) == EXIT && so_long->coins == so_long->map->coins)
