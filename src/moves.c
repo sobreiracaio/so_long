@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:22:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/09/22 17:42:01 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/09/24 19:10:21 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int check_move (t_game *so_long)
 
 void move_player(t_game *s1, t_map *map)
 {	
-	static t_tile previous;
-	previous = SPACE;
+	static t_tile previous = SPACE;
+	
 	
 	map->tiles[s1->curr.y][s1->curr.x] = previous;
 	if (get_tile(s1,s1->next) != COIN)

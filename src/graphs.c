@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:39:41 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/09/22 17:10:45 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/09/24 19:28:05 by admin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,7 @@ int render_move(t_game *so_long)
 {
 	if(!check_move(so_long))
 		return (0);
-	ft_putstr_fd("Moves: ",1);
-	ft_putnbr_fd(++so_long->moves, 1);
-	ft_putstr_fd("\n", 1);
+	//put terminal outputs for the moves
 	if(get_tile(so_long, so_long->next) == COIN)
 		so_long->coins++;
 	else if(get_tile(so_long, so_long->next) == EXIT && so_long->coins == so_long->map->coins)
@@ -67,8 +65,27 @@ void	render_tile(t_game *so_long, t_point p)
 		sp = so_long->sp[S1];
 	else if (so_long->map->tiles[p.y][p.x] == PLAYER)
 		sp = so_long->sp[P1];
+		
+	
+	
+	// int i;
+		
+	// i =0;
+	// while(so_long->map->tiles[i])
+	// {
+	// 	ft_printf("%s\n",so_long->map->tiles[i]);
+	// 	i++;
+	// }
+
+	// ft_printf("Value of display.mlx is: %p\n", so_long->display.mlx);
+	// ft_printf("Value of display.win is: %p\n", so_long->display.win);
+	// ft_printf("Value of sp.img is: %p\n", sp.img);
+	// ft_printf("Value of sp.width is: %d\n", sp.width);
+	// ft_printf("Value of sp.height is: %d\n", sp.height);
+	
 	mlx_put_image_to_window(so_long->display.mlx, so_long->display.win, \
 		sp.img, sp.width * p.x, sp.height * p.y);
+	// ft_printf("Done!");
 }
 
 void	render_map(t_game *so_long, t_map *map)
