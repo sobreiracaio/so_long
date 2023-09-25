@@ -3,28 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
+/*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 17:22:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/09/24 19:10:21 by admin            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:10:04 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int check_move (t_game *so_long)
+int	check_move(t_game *so_long)
 {
-	return(!is_same_point(so_long->curr, so_long->next) \
-			&& get_tile(so_long, so_long->next) != WALL); 	
+	return (!is_same_point(so_long->curr, so_long->next) \
+			&& get_tile(so_long, so_long->next) != WALL);
 }
 
-void move_player(t_game *s1, t_map *map)
-{	
-	static t_tile previous = SPACE;
-	
-	
+void	move_player(t_game *s1, t_map *map)
+{
+	static t_tile	previous = SPACE;
+
 	map->tiles[s1->curr.y][s1->curr.x] = previous;
-	if (get_tile(s1,s1->next) != COIN)
+	if (get_tile(s1, s1->next) != COIN)
 		previous = map->tiles[s1->next.y][s1->next.x];
 	else
 		previous = SPACE;
@@ -34,7 +33,7 @@ void move_player(t_game *s1, t_map *map)
 	s1->curr = s1->next;
 }
 
-int check_key(int key, t_game *so_long)
+int	check_key(int key, t_game *so_long)
 {
 	if (key == ESC)
 		quit_game(so_long);

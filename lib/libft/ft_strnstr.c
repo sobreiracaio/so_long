@@ -6,7 +6,7 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:55:02 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/04/17 15:05:49 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:23:51 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			if (little[j + 1] == '\0')
 				return ((char *)&big[i]);
 			++j;
-		}	
+		}
 		++i;
-	}	
+	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: wcorrea- <wcorrea-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 08:16:40 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/04/15 00:12:36 by wcorrea-         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:22:49 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_count_words(const char *s, char c)
 			words++;
 			while (s[i] && s[i] != c)
 				i++;
-		}	
+		}
 		else
 			i++;
 	}

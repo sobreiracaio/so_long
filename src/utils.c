@@ -6,13 +6,13 @@
 /*   By: admin <admin@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:21:08 by crocha-s          #+#    #+#             */
-/*   Updated: 2023/07/14 20:04:28 by admin            ###   ########.fr       */
+/*   Updated: 2023/09/25 15:08:21 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int exit_error (t_game *so_long, char *message)
+int	exit_error(t_game *so_long, char *message)
 {
 	clean_game(so_long);
 	ft_putstr_fd("Error\n", 2);
@@ -23,12 +23,9 @@ int exit_error (t_game *so_long, char *message)
 
 int	flood_fill(t_map *map, t_point curr, char **path)
 {
-     static t_uint coins = 0;
-	 static int exit = 0;
+	static t_uint	coins = 0;
+	static int		exit = 0;
 
-	 
-	
-	 
 	if (path[curr.y][curr.x] == WALL)
 		return (0);
 	if (path[curr.y][curr.x] == COIN)
@@ -36,19 +33,19 @@ int	flood_fill(t_map *map, t_point curr, char **path)
 	if (path[curr.y][curr.x] == EXIT)
 		exit = 1;
 	path[curr.y][curr.x] = WALL;
-	flood_fill(map,(t_point){curr.x + 1, curr.y}, path);
-	flood_fill(map,(t_point){curr.x - 1, curr.y}, path);
-	flood_fill(map,(t_point){curr.x, curr.y + 1}, path);
-	flood_fill(map,(t_point){curr.x, curr.y - 1}, path);
+	flood_fill(map, (t_point){curr.x + 1, curr.y}, path);
+	flood_fill(map, (t_point){curr.x - 1, curr.y}, path);
+	flood_fill(map, (t_point){curr.x, curr.y + 1}, path);
+	flood_fill(map, (t_point){curr.x, curr.y - 1}, path);
 	return (coins == map->coins && exit == 1);
 }
 
-void check_file (char *file)
+void	check_file(char *file)
 {
-	size_t i;
-	
+	size_t	i;
+
 	i = ft_strlen(file);
-	if(i<= 4)
+	if (i <= 4)
 	{
 		exit_error(NULL, "Invalid file name!");
 	}
@@ -56,12 +53,12 @@ void check_file (char *file)
 		exit_error(NULL, "Invalid file extension!");
 }
 
-int is_same_point(t_point a, t_point b)
+int	is_same_point(t_point a, t_point b)
 {
 	return (a.x == b.x && a.y == b.y);
 }
 
-t_tile get_tile(t_game *so_long, t_point p)
+t_tile	get_tile(t_game *so_long, t_point p)
 {
 	return (so_long->map->tiles[p.y][p.x]);
 }

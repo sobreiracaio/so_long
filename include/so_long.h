@@ -6,7 +6,7 @@
 /*   By: crocha-s <crocha-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 09:42:28 by wcorrea-          #+#    #+#             */
-/*   Updated: 2023/09/22 15:38:23 by crocha-s         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:18:53 by crocha-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ typedef enum e_tile
 	COIN = 'C',
 	EXIT = 'E',
 	PLAYER = 'P'
-} t_tile;
-
+}	t_tile;
 
 typedef enum e_index
 {
@@ -115,7 +114,7 @@ typedef struct s_game
 }					t_game;
 
 t_tile	get_tile(t_game *so_long, t_point p);
-int	flood_fill(t_map *map, t_point curr, char **path);
+int		flood_fill(t_map *map, t_point curr, char **path);
 int		exit_error(t_game *so_long, char *msg);
 void	check_file(char *file);
 int		is_same_point(t_point a, t_point b);
