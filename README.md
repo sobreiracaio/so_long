@@ -3,7 +3,7 @@
 The **so_long** project is a simple 2D game developed in C using the MiniLibX graphics library. The goal of the game is to guide a character through a maze, collecting items along the way and find an exit. The player must complete the game with the fewest number of moves possible.
 
 ## Prerequisites
-In order to run this project, MiniLibX installation is needed in project folder. (Link for minilibx here: [Link]([https://www.openai.com](https://github.com/42Paris/minilibx-linux)
+In order to run this project, MiniLibX installation is needed in project folder. (Link for minilibx here: [Link](https://github.com/42Paris/minilibx-linux)
 
 ## Compilation
 To compile the project, run:
